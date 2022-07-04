@@ -150,7 +150,7 @@ histogram? There are a few ways!
   contains a key of a particular genre. If so, increment the value of that key
   by one, otherwise, create a new key/value pair.
 
-`add_to_artist_count`: creates a histogram similar to the one above, but for
+`add_to_artist_count()`: creates a histogram similar to the one above, but for
 artists rather than genres.
 
 ***
