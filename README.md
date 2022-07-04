@@ -30,7 +30,7 @@ In this lab, we'll be dealing with a `Song` class. The `Song` class can produce
 individual songs. Each song has a name, an artist and a genre. We need our
 `Song` class to be able to keep track of the number of songs that it creates.
 
-```ruby
+```py
 Song.count
 # => 30
 ```
@@ -38,15 +38,15 @@ Song.count
 We need our `Song` class to be able to show us all of the artists of existing
 songs:
 
-```ruby
+```py
 Song.artists
-# => ["Jay-Z", "Drake", "Beyonce"]
+# ["Jay-Z", "Drake", "Beyonce"]
 ```
 
 We need our `Song` class to be able to show us all of the genres of existing
 songs:
 
-```ruby
+```py
 Song.genres
 # => ["Rap", "Pop"]
 ```
@@ -56,63 +56,60 @@ each genre it creates.
 
 In other words, calling:
 
-```ruby
+```py
 Song.genre_count
 ```
 
 Should return something like this;
 
-```ruby
-{"rap" => 5, "rock" => 1, "country" => 3}
+```py
+{"Rap": 5, "Rock": 1, "Country": 3}
 ```
 
 Lastly, we want our `Song` class to reveal to us the number of songs each artist
 is responsible for.
 
-```ruby
+```py
 Song.artist_count
-# => {"Beyonce" => 17, "Jay-Z" => 40}
+# {"Beyonce": 17, "Jay-Z": 40}
 ```
 
-We'll accomplish this with the use of **class variables** and **class methods**.
+We'll accomplish this with the use of **class attributes** and **class
+methods**.
 
 ## Instructions
 
 Define your `Song` class such that an individual song is initialized with a
 name, artist and genre.
 
-There should be an `attr_accessor` for those three attributes.
-
-```ruby
-ninety_nine_problems = Song.new("99 Problems", "Jay-Z", "rap")
+```py
+ninety_nine_problems = Song.new("99 Problems", "Jay-Z", "Rap")
 
 ninety_nine_problems.name
-# => "99 Problems"
+# "99 Problems"
 
 ninety_nine_problems.artist
-# => "Jay-Z"
+# "Jay-Z"
 
 ninety_nine_problems.genre
-# => "rap"
+# "Rap"
 ```
 
-Create a class variable, `@@count`. We will use this variable to keep track of
+Create a class attribute, `count`. We will use this attribute to keep track of
 the number of new songs that are created from the `Song` class. Set this
-variable equal to `0`.
+attribute equal to `0`.
 
-At what point should we increment our `@@count` of songs? Whenever a new song is
-created. Your `#initialize` method should use the `@@count` variable and
-increment the value of that variable by `1`.
+At what point should we increment our `count` of songs? Whenever a new song is
+created. Your `__init__` method should call a class method
+`add_song_to_count()` that increments the value of `count` by one.
 
 Next, define the following class methods:
-
-`Song.count`: returns the total number of songs created.
 
 `Song.genres`: returns an array of all of the genres of existing songs. This
 array should contain only _unique genres_ — no duplicates! Think about what
 you'll need to do to get this method working:
 
-- You'll need a class variable, let's call it `@@genres`, that is equal to an
+- You'll need a class attribute, let's call it `@@genres`, that is equal to an
   empty array.
 - When should you add genres to the array? Whenever a new song is created.
   Your `#initialize` method should add the genre of the song being created to
@@ -125,7 +122,7 @@ you'll need to do to get this method working:
 songs. This array should only contain unique artists––no repeats! Once again
 think about what you need to do to implement this behavior.
 
-- You'll need a class variable, let's call it `@@artists`, that is equal to an
+- You'll need a class attribute, let's call it `@@artists`, that is equal to an
   empty array.
 - When should you add artists to this array? Whenever a new song is
   initialized. Your `#initialize` method should add artists to the `@@artists`
@@ -139,7 +136,7 @@ think about what you need to do to implement this behavior.
 genre. Each genre name key should point to a value that is the number of songs
 that have that genre.
 
-```ruby
+```py
 Song.genre_count
   # => {"rap" => 5, "rock" => 1, "country" => 3}
 ```
@@ -156,13 +153,6 @@ histogram? There are a few ways!
 
 `Song.artist_count`: returns a histogram similar to the one above, but for
 artists rather than genres.
-
-## Resources
-
-- [`#tally`][tally docs]
-
-[tally docs]: https://ruby-doc.org/core-2.7.0/Enumerable.html#method-i-tally
-
 
 ***
 
