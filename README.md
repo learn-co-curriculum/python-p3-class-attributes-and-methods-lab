@@ -105,53 +105,52 @@ created. Your `__init__` method should call a class method
 
 Next, define the following class methods:
 
-`Song.genres`: returns an array of all of the genres of existing songs. This
-array should contain only _unique genres_ — no duplicates! Think about what
-you'll need to do to get this method working:
+`add_to_genres()`: adds any new genres to a class attribute `genres`, a
+list. This list should contain only _unique genres_ — no duplicates! Think
+about what you'll need to do to get this method working:
 
-- You'll need a class attribute, let's call it `@@genres`, that is equal to an
-  empty array.
+- You'll need a class attribute, let's call it `genres`, that is equal to an
+  empty list.
 - When should you add genres to the array? Whenever a new song is created.
-  Your `#initialize` method should add the genre of the song being created to
-  the `@@genres` array. All genres should be added to the array. Control for
-  duplicates when you code your `.genres` class method, not when you add
-  genres to the original `@@genres` array. We will want to know how many songs
+  Your `__init__` method should add the genre of the song being created to
+  the `genres` list. All genres should be added to the list. Control for
+  duplicates when you code your `add_to_genres` class method, not when you add
+  genres to the original `genres` list. We will want to know how many songs
   of each genre have been created. We'll revisit that job a little later on.
 
-`Song.artists`: returns an array of all of the artists of the existing
-songs. This array should only contain unique artists––no repeats! Once again
-think about what you need to do to implement this behavior.
+`add_to_artists()`: adds any new artists to a class attribute `artists`, a
+list. This list should only contain unique artists, just like the `genres`
+class attribute. Once again, thnk about what you need to do to implement this
+behavior:
 
-- You'll need a class attribute, let's call it `@@artists`, that is equal to an
-  empty array.
+- You'll need a class attribute, `artists`, that is equal to an empty list.
 - When should you add artists to this array? Whenever a new song is
-  initialized. Your `#initialize` method should add artists to the `@@artists`
-  array. All artists should be added to the array. Control for duplicates when
-  you code your `.artists` class method, not when you add artists to the
-  original `@@artists` array. We will want to know how many songs each have
+  initialized. Your `__init__` method should add artists to the `artists`
+  list. All artists should be added to the list. Control for duplicates when
+  you code your `add_to_artists()` class method, not when you add artists to
+  the original `artists` list. We will want to know how many songs each have
   been assigned to each artist. We'll revisit that job a little later on when
-  we write our `.artist_count` method.
+  we write our `add_to_artist_count()` method.
 
-`Song.genre_count`: returns a hash in which the keys are the names of each
-genre. Each genre name key should point to a value that is the number of songs
-that have that genre.
+`add_to_genre_count()`: adds to a class attribute `genre_count`, a dictionary
+in which the keys are the names of each genre. Each genre name key should point
+to a value that is the number of songs that have that genre.
 
 ```py
 Song.genre_count
-  # => {"rap" => 5, "rock" => 1, "country" => 3}
+# {"Rap": 5, "Rock": 1, "Country": 3}
 ```
 
 This manner of displaying numerical data is called a
 [histogram](https://en.wikipedia.org/wiki/Histogram). How will you create your
 histogram? There are a few ways!
 
-- You can need to iterate over the `@@genres` array and populate a hash with the
-  key/value pairs. You will need to check to see if the hash already contains a
-  key of a particular genre. If so, increment the value of that key by one,
-  otherwise, create a new key/value pair.
-- You can also look into the [`#tally`][tally docs] method.
+- You can need to iterate over the `genres` list and populate a dictionary with
+  the key/value pairs. You will need to check to see if the hash already
+  contains a key of a particular genre. If so, increment the value of that key
+  by one, otherwise, create a new key/value pair.
 
-`Song.artist_count`: returns a histogram similar to the one above, but for
+`add_to_artist_count`: creates a histogram similar to the one above, but for
 artists rather than genres.
 
 ***
