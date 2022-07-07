@@ -120,7 +120,7 @@ about what you'll need to do to get this method working:
 
 `add_to_artists()`: adds any new artists to a class attribute `artists`, a
 list. This list should only contain unique artists, just like the `genres`
-class attribute. Once again, thnk about what you need to do to implement this
+class attribute. Once again, think about what you need to do to implement this
 behavior:
 
 - You'll need a class attribute, `artists`, that is equal to an empty list.
