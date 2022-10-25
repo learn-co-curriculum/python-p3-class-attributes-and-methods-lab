@@ -83,7 +83,7 @@ Define your `Song` class such that an individual song is initialized with a
 name, artist and genre.
 
 ```py
-ninety_nine_problems = Song.new("99 Problems", "Jay-Z", "Rap")
+ninety_nine_problems = Song("99 Problems", "Jay-Z", "Rap")
 
 ninety_nine_problems.name
 # "99 Problems"
