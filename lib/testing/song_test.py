@@ -42,7 +42,7 @@ class TestSong:
 
     def test_has_artist_count(self):
         '''keeps count of Songs for each artist.'''
-        assert(Song.artist_count["Jay Z"] == 1)
-        assert(Song.artist_count["Beyonce"] == 1)
-        assert(Song.artist_count["Nirvana"] == 1)
-        assert(Song.artist_count["Hall and Oates"] == 2)
+        assert(Song.artist_count.get("Jay Z") == 1)
+        assert(Song.artist_count.get("Beyonce") == 1)
+        assert(Song.artist_count.get("Nirvana") == 1)
+        assert(Song.artist_count.get("Hall and Oates") == 2)
