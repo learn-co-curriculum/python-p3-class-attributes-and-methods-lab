@@ -77,6 +77,8 @@ Song.artist_count
 We'll accomplish this with the use of **class attributes** and **class
 methods**.
 
+***
+
 ## Instructions
 
 Define your `Song` class such that an individual song is initialized with a
