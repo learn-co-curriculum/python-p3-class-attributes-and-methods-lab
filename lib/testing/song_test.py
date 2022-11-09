@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from lib.song import Song
+from song import Song
 
 class TestSong:
     '''Class "Song" in song.py'''
