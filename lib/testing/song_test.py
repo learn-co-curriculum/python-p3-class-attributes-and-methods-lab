@@ -27,12 +27,21 @@ class TestSong:
         assert("Rap" in Song.genres)
         assert("Pop" in Song.genres)
         assert("Rock" in Song.genres)
+        
+        
+    def test_unique_genres(self):
+        '''all song genres are unique.'''
+        assert len(Song.genres) == len(set(Song.genres))
 
     def test_has_artists(self):
         '''keeps track of all Song artists.'''
         assert("Jay Z" in Song.artists)
         assert("Beyonce" in Song.artists)
         assert("Hall and Oates" in Song.artists)
+        
+    def test_unique_artists(self):
+        '''all song artists are unique.'''
+        assert len(Song.artists) == len(set(Song.artists))
         
     def test_has_genre_count(self):
         '''keeps count of Songs for each genre.'''
