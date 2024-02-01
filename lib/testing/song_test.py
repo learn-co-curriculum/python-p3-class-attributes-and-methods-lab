@@ -2,6 +2,10 @@
 
 from song import Song
 
+Song.count = 0
+Song.genre_count = {}
+Song.artist_count = {}
+
 class TestSong:
     '''Class "Song" in song.py'''
 
